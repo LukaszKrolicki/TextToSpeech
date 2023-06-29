@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello! This is Text to speech demo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-300px"/>
+
+    <Button
+        android:id="@+id/buttonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press to speak entered text"
+        app:layout_constraintTop_toBottomOf="@+id/textToSpeech"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30px"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textToSpeech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="15dp"
+        android:paddingHorizontal="100px"
+        app:layout_constraintTop_toBottomOf="@id/text1"
+        app:layout_constraintBottom_toTopOf="@id/buttonText">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionGo"
+            android:hint="Write some text"
+            android:inputType="textCapWords"
+            android:textColor="#363A43"
+            android:textColorHint="#7A8089" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
