@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         if (status == TextToSpeech.SUCCESS) {
             // set US English as language for tts
-            val result = tts!!.setLanguage(Locale.US)
-
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.e("TTS", "The Language specified is not supported!")
+            for(loc in tts?.availableLanguages!!){
+                if(loc.language=="pl"){
+                    tts?.setLanguage(loc)
+                }
             }
 
         } else {
